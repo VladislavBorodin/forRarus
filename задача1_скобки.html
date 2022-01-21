@@ -24,7 +24,7 @@ function proverka(){
 arifmetic=document.getElementById('arifmetic').value;
 left=0;
 right=0;
-var result = new Boolean(false);
+var result = new Boolean(true);
 	for(let symbol of arifmetic){
 			if (symbol==")") {
 				left+=1;
@@ -32,9 +32,9 @@ var result = new Boolean(false);
 			if(symbol=="("){
 				right+=1;
 			} 	
-			if(left>right){ result=false;break;}//Проверка на последовательность
+			if(left>right){ result=false;break;}//Проверка 
 	}
-	if (left==right){result=true;} else {result=false;}//Проверка на количество
+	
 	document.getElementById('res').textContent=result;
 }
 </script>
