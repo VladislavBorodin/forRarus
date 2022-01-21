@@ -32,9 +32,9 @@ var result = new Boolean(true);
 			if(symbol=="("){
 				right+=1;
 			} 	
-			if(left>right){ result=false;break;}//Проверка 
+			if(left>right){ result=false;break;}//Проверка на баланс
 	}
-	
+	if (left==right){result=true;} else {result=false;}//Проверка на количество
 	document.getElementById('res').textContent=result;
 }
 </script>
