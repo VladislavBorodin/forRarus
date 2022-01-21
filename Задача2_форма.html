@@ -1,0 +1,42 @@
+<html>
+ <head>
+  <title>Форма</title>
+  
+ </head>
+    <style>
+    input:invalid {    border: 2px dashed rgb(21, 22, 21);            }
+
+    input:invalid:required {
+    background-image: linear-gradient(to right, rgb(192, 251, 255), rgb(245, 47, 57));
+    }
+
+    
+    </style>
+ <body> 
+  <form action="" method="post"> 
+   <p>Комментарий<Br><textarea name="comment" cols="40" rows="3"></textarea></p>
+   <p>ФИО:<input name="FIO" required id="FIO"></p>
+   <p>Адрес:<input name="adres"></p>
+   <p>Почта:<input type="email" name="email" id="emm"></p>
+   <p>Телефон:<input type="tel" name="telephone" placeholder="+7(XXX) XXX-XX-XX" required id="tt"></p>
+   <p>Файл:<input type="file" name="file"></p>
+
+   <p><input type="button" value="Отправить" onclick="chek()">  <input type="reset"></p>
+  </form>
+   <!-- в строке выше должна была быть кнопка type="sumbit", но реализовать решение с ней я не смог, не могу понять почему рнр код не работаетв документе -->
+
+
+ </body>
+</html>
+
+<script>
+    function chek(){
+               var Email="_"; Email = document.getElementById("emm");
+               reg=true;
+               //alert(document.getElementById("tt").required);
+               //alert(document.getElementById("FIO").required);
+                if (Email.value.includes("@gmail.com")) {reg=false} 
+                if (reg && document.getElementById("tt").required && document.getElementById("FIO").required){alert("Регистрация прошла успешно!")} 
+                else {alert("Регистрация невозможна!")}
+                }
+</script>
