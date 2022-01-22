@@ -13,7 +13,7 @@
     
     </style>
  <body> 
-  <form action="" method="post"> 
+  <form onsubmit="chek()"> 
    <p>Комментарий<Br><textarea name="comment" cols="40" rows="3"></textarea></p>
    <p>ФИО:<input name="FIO" required id="FIO"></p>
    <p>Адрес:<input name="adres"></p>
@@ -21,7 +21,7 @@
    <p>Телефон:<input type="tel" name="telephone" placeholder="+7(XXX) XXX-XX-XX" required id="tt"></p>
    <p>Файл:<input type="file" name="file"></p>
 
-   <p><input type="button" value="Отправить" onclick="chek()">  <input type="reset"></p>
+   <p><input type="submit">  <input type="reset"></p>
   </form>
    <!-- в строке выше должна была быть кнопка type="sumbit", но реализовать решение с ней я не смог, не могу понять почему рнр код не работаетв документе -->
 
@@ -31,11 +31,11 @@
 
 <script>
     function chek(){
-               var Email="_"; Email = document.getElementById("emm");
+               var Email="_"; Email = document.getElementById("emm").value;
                reg=true;
                //alert(document.getElementById("tt").required);
                //alert(document.getElementById("FIO").required);
-                if (Email.value.includes("@gmail.com")) {reg=false} 
+                if (Email.includes("@gmail.com")) {reg=false} 
                 if (reg && document.getElementById("tt").required && document.getElementById("FIO").required){alert("Регистрация прошла успешно!")} 
                 else {alert("Регистрация невозможна!")}
                 }
